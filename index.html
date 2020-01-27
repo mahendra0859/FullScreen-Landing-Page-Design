@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      FullScreen Landing Page Design with Navigation Menu - Website Design
+    </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        background: #191919;
+        min-height: 100vh;
+        font-family: sans-serif;
+      }
+      nav a {
+        font-size: 40px;
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        text-align: center;
+      }
+      nav {
+        position: fixed;
+        left: 0;
+        z-index: 50;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100vh;
+        background: #0b1419;
+      }
+      section {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 0;
+        opacity: 0;
+        transition: all ease-in 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 160px;
+        /* padding-right: 160px; */
+      }
+      section h1 {
+        color: white;
+        font-size: 50px;
+        text-transform: uppercase;
+        opacity: 0;
+      }
+      section:target {
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+      section:target h1 {
+        opacity: 0;
+        animation: 2s fadeIn forwards 0.5s;
+      }
+
+      #first,
+      #second,
+      #third,
+      #fourth {
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #first {
+        background-image: url("https://i.picsum.photos/id/1015/6000/4000.jpg");
+      }
+      #second {
+        background-image: url("https://i.picsum.photos/id/1010/5184/3456.jpg");
+      }
+      #third {
+        background-image: url("https://i.picsum.photos/id/1006/3000/2000.jpg");
+      }
+      #fourth {
+        background-image: url("https://i.picsum.photos/id/1012/3973/2639.jpg");
+      }
+      @keyframes fadeIn {
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#first"><ion-icon name="clock"></ion-icon></a>
+      <a href="#second"><ion-icon name="wifi"></ion-icon></a>
+      <a href="#third"><ion-icon name="sunny"></ion-icon></a>
+      <a href="#fourth"><ion-icon name="search"></ion-icon></a>
+    </nav>
+
+    <div class="container">
+      <section id="first">
+        <h1>first</h1>
+      </section>
+      <section id="second">
+        <h1>second</h1>
+      </section>
+      <section id="third">
+        <h1>third</h1>
+      </section>
+      <section id="fourth">
+        <h1>fourth</h1>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>
